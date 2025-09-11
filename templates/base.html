@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
+
+<title>{% block title %}ZiAA Quiz{% endblock %}</title>
+</head>
+<body>
+    <div class="columns is-vcentered" style="height:100vh;">
+        <!-- Sidebar -->
+        <div class="column is-2">
+            <aside class="menu">
+                <p class="menu-label">Navigation</p>
+                <ul class="menu-list">
+                    <li><a href="{{ url_for('index') }}">Quiz</a></li>
+                </ul>
+
+            </aside>
+
+        </div>
+
+        <div class="column is-10">
+        {% block content %}
+
+        {% endblock %}
+        </div>
+
+    </div>
+</body>
+
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        Mit Liebe gecoded   
+    </div>
+</footer>
+
+</html>
