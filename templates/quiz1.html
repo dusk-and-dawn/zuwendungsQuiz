@@ -4,10 +4,46 @@
 
 {% block content %}
 
+    <img src="static/aa_trees.jpeg" alt="AA von aussen" style="width: 700px;height: 550px;">
+
+    <br>
+    <br>
+
     <h1 class="title">Frage 1</h1>
 
     <h2 class="subtitle">Wer sind typischerweise die Zuwendungsempfänger?</h2>
 
-    <div class="has-text-centered">Bitte wähle alle Antworten aus welche du für richtig hältst:</div>
-
+    <div class="textbox">Bitte wähle alle Antworten aus welche du für richtig hältst:</div>
+    <form method="post">
+        <label class="checkbox" >
+            <input type="checkbox" name="answers" value="Nicht-Regierungsorganisationen (NGOs)"> Nicht-Regierungsorganisationen (NGOs)
+        </label> 
+        <br>
+        <label class="checkbox" >
+            <input type="checkbox" name="answers" value="Einzelpersonen"> Einzelpersonen
+        </label> 
+        <br>
+        <label class="checkbox" >
+            <input type="checkbox" name="answers" value="Politische Stiftungen"> Politische Stiftungen
+        </label> 
+        <br>
+        <label class="checkbox" >
+            <input type="checkbox" name="answers" value="Ausländische Regierungen"> Ausländische Regierungen
+        </label> 
+        <br>
+        <label class="checkbox" >
+            <input type="checkbox" name="answers" value="temporäre Projekt-Teams"> temporäre Projekt-Teams 
+        </label> 
+        <br>
+        <label class="checkbox" >
+            <input type="checkbox" name="answers" value="Firmen"> Firmen
+        </label>
+        <br>
+        <br>
+        <div class="field is-grouped">
+            <div class="control">
+                <input class="button is-dark" type="submit" value="Antworten prüfen">
+            </div>
+        </div>
+    </form>
 {% endblock %}
