@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %} Quiz ZiAA {% endblock %}
+
+{% block content %}
+
+    <img src="static/q2intro.jpg" alt="digital justice 2" style="width: 700px;height: 550px;">
+
+    <br>
+    <br>
+
+    <h1 class="title">Frage 2</h1>
+
+    <h2 class="subtitle">Welche 2 Elemente sind eine Muss-Voraussetzung für das Vergeben einer Zuwendung?</h2>
+
+    <div class="textbox">Bitte wähle alle Antworten aus welche du für richtig hältst:</div>
+    <form method="post">
+        <label class="checkbox" >
+            <input type="checkbox" name="answers" value="Nicht-Regierungsorganisationen (NGOs)"> Der Zuwendungsempfänger muss eine Nicht-Regierungsorganisationen (NGO) sein
+        </label> 
+        <br>
+        <label class="checkbox" >
+            <input type="checkbox" name="answers" value="erhebliches Bundesinteresse"> Erhebliches Bundesinteresse muss bestehen 
+        </label> 
+        <br>
+        <label class="checkbox" >
+            <input type="checkbox" name="answers" value="Genderbalance"> Es muss eine gleichmäßige Verteilung von Frauen und Männern bei dem zu fördernden Team bestehen  
+        </label> 
+        <br>
+        <label class="checkbox" >
+            <input type="checkbox" name="answers" value="Zweck nicht ohne Zuwendung"> Der Bund kann den geplanten Zweck nicht ohne die Zuwendung oder nicht in ausreichender Form ohne die Zuwendung erreichen
+        </label> 
+        <br>
+        <label class="checkbox" >
+            <input type="checkbox" name="answers" value="Phd"> Es muss mindestens eine Person mit höherem Bildungsabschluss Teil des Projektteams sein  
+        </label> 
+        <br>
+        <label class="checkbox" >
+            <input type="checkbox" name="answers" value="keine Kompetenz"> Der Staat darf keine eigene Kompetenzen auf dem zu fördernden Gebiet haben 
+        </label>
+        <br>
+        <br>
+        <div class="field is-grouped">
+            <div class="control">
+                <input class="button is-dark" type="submit" value="Antworten prüfen">
+            </div>
+        </div>
+    </form>
+{% endblock %}
