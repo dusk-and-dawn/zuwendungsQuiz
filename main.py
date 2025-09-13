@@ -1,6 +1,9 @@
-from flask import Flask, render_template, url_for, request, redirect, jsonify 
+from flask import Flask, render_template, url_for, request, redirect, session
+import uuid
+from db import add_to_main_db, show_db, get_db_connection
 
 app = Flask(__name__)
+app.secret_key = "terrible_key_really_who_could_have_made_even_this"
 
 @app.route('/')
 def index():
@@ -8,6 +11,10 @@ def index():
 
 @app.route('/quiz1', methods=('POST','GET'))
 def quiz1():
+    db = get_db_connection('main.db')
+    session['id'] = str(uuid.uuid4())
+    add_to_main_db(db=db, session=session['id'], score=0, q_answered=0)
+    show_db(db)
     if request.method == 'POST':
         correct_answers = ['Nicht-Regierungsorganisationen (NGOs)', 'Politische Stiftungen', 'temporäre Projekt-Teams']
         answers = request.form.getlist("answers")
