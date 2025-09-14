@@ -39,4 +39,27 @@ def get_q(db, id):
     rows = cur.fetchall()
     for i in rows:
         print(i)
-    return rows[0]
+    return rows[0][0]
+
+def create_answer_table(db):
+    cur = db.cursor()
+    
+    cur.execute(
+        '''CREATE TABLE IF NOT EXISTS q_and_a (
+        q INTEGER PRIMARY KEY, 
+        a TEXT
+        )'''
+        )
+    
+    
+    db.commit()
+    
+    with open('data.txt', 'r') as file:
+        lst = file.readlines()
+
+
+    print(f'q:{lst[0]} a:{lst[1]}')
+    cur.execute('INSERT OR IGNORE into q_and_a VALUES (?,?)', (lst[0], lst[1]))
+    db.commit()
+
+    

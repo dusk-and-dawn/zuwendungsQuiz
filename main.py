@@ -1,9 +1,14 @@
 from flask import Flask, render_template, url_for, request, redirect, session
 import uuid
-from db import add_to_main_db, show_db, get_db_connection, get_q
+from db import add_to_main_db, show_db, get_db_connection, get_q, create_answer_table
 
 app = Flask(__name__)
 app.secret_key = "terrible_key_really_who_could_have_made_even_this"
+
+db = get_db_connection('main.db')
+
+create_answer_table(db)
+
 
 @app.route('/')
 def index():
