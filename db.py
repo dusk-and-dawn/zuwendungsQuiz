@@ -32,3 +32,11 @@ def show_db(db):
 def get_db_connection(db):
     conn = sql.connect(db)
     return conn
+
+def get_q(db, id):
+    cur = db.cursor()
+    cur.execute('SELECT q_answered FROM player_stats WHERE session=?', (id,))
+    rows = cur.fetchall()
+    for i in rows:
+        print(i)
+    return rows[0]

@@ -3,12 +3,24 @@
 {% block title %} Quiz ZiAA {% endblock %}
 
 {% block content %}
-    <img src="static/fail_img.jpeg" alt="fail" style="width: 700px;height: 550px;">
+    <img src="static/fail_img.jpg" alt="fail" style="width: 700px;height: 550px;">
     <h1 class="title">Das war leider nicht ganz korrekt</h1>
 
     <div class="box">
+        coming from question: {{prev_q}}
+
         Zu den typischen Zuwendungsempfängern gehören weder Firmen, noch ausländische Regierungen oder Einzelpersonen.
         Zwar kommt es vor, dass Einzelpersonen gefördert werden, zum Beispiel wenn Professoren zu Konferenzen der Vereinten Nationen fahren, allerdings handelt es sich hierbei um Ausnahmen.
     </div>
+
+    <form method="POST">
+        <div class="field is-grouped">
+                <div class="control">
+                    <input class="button is-dark" type="submit" value="weiter">
+                </div>
+        </div>
+    </form>
+
+
 
 {% endblock %}
